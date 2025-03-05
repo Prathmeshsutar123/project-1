@@ -1,0 +1,145 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f); /* Soft peach gradient */
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(90deg, #ff6a00, #ee0979); /* Vibrant orange to pink gradient */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 5px solid #ee0979;
+    position: relative;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+/* Main section styles */
+main {
+    padding: 20px;
+}
+
+/* Bucket list styles */
+.bucket-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bucket-list li {
+    background: white;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.bucket-list li:hover {
+    background: rgba(255, 106, 0, 0.1); /* Light orange on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon styles */
+.icon {
+    margin-right: 15px;
+    font-size: 1.5em;
+    transition: transform 0.3s;
+}
+
+.bucket-list li:hover .icon {
+    transform: scale(1.2);
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #ff6a00, #ee0979); /* Same gradient as header */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header, footer {
+        padding: 20px;
+    }
+
+    .bucket-list li {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
+}
+
+/* New Fancy Styles */
+.bucket-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background: linear-gradient(180deg, #ff6a00, #ee0979); /* Gradient for the left border */
+    border-radius: 15px 0 0 15px;
+    transition: width 0.3s;
+}
+
+.bucket-list li:hover::before {
+    width: 10px;
+}
+
+.bucket-list li:hover {
+    background: rgba(255, 106, 0, 0.2); /* Light orange on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a subtle animation to the header */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    animation: fadeIn 0.8s ease forwards;
+}
